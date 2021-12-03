@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{%block title  %} {%endblock %}</title>
+    <link rel="stylesheet" href="{{ asset("backoffice/node_modules/font-awesome/css/font-awesome.min.css")}}" />
+    <link rel="stylesheet" href="{{  asset("backoffice/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css")}}" />
+    <link rel="stylesheet" href="{{ asset("node_modules/flag-icon-css/css/flag-icon.min.css")}}" />
+    <link rel="stylesheet" href="{{  asset("backoffice/css/style.css" )}}"/>
+    <link rel="stylesheet" href="{{  asset("backoffice/css/footer.css" )}}"/>
+    <link rel="shortcut icon" href="{{ asset("backoffice/images/favicon.png")}} " />
+</head>
+
+<body>
+
+
+<div class=" container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="bg-white text-center navbar-brand-wrapper">
+            <a class="navbar-brand brand-logo" href={{  asset ("backoffice/index.html")}}><img src={{asset ("backoffice/images/logo_star_black.png")}} /></a>
+            <a class="navbar-brand brand-logo-mini" href={{asset("backoffice/index.html")}}><img src={{asset("backoffice/images/logo_star_mini.jpg")}} alt=""></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+            <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="form-inline mt-2 mt-md-0 d-none d-lg-block">
+                <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
+            </form>
+            <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
+                <li class="nav-item">
+                    <a class="nav-link profile-pic" href= "#"><img class="rounded-circle" src={{asset ("backoffice/images/face.jpg" )}}alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-dark navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- partial -->
+    <div class="container-fluid">
+
+
+        <div class="row row-offcanvas row-offcanvas-right">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="bg-white sidebar sidebar-offcanvas" id="sidebar">
+                <div class="user-info">
+                    <img src={{asset("backoffice/images/88.jpg")}} alt="">
+                    <p class="name">Richard V.Welsh</p>
+                    <p class="designation">DOCTOR</p>
+                    <span class="online"></span>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href={{ asset("ordonnance/new") }}>
+                            <img src ={{  asset("backoffice/images/icons/1.png")}} alt="">
+                            <span class="menu-title">ordonnance</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ asset("doctor/1") }}">
+                            <img src={{  asset  ("backoffice/images/icons/4.png")}} alt="">
+                            <span class="menu-title">account informations</span>
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={{ asset("doctor/1/edit")}}>
+                            <img src={{asset ("backoffice/images/icons/2.png")}} alt="">
+                            <span class="menu-title">modify account</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href={{asset ("/")}}>
+                            <img src={{asset ("backoffice/images/icons/5.png") }} alt="">
+                            <span class="menu-title">calendrier</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href={{asset ("contact")}}>
+                            <img src={{asset  ("backoffice/images/icons/7.png")}} alt="">
+                            <span class="menu-title">contact</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={{asset  ("doctor/indexadmin")}}>
+                            <img src={{ asset ("backoffice/images/icons/8.png")}} alt="">
+                            <span class="menu-title">filtre selon les specialités</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#sample-pages" aria-expanded="false" aria-controls="sample-pages">
+                            <img src={{asset ("backoffice/images/icons/dd.png")}} alt="">
+                            <span class="menu-title">disease<i class="fa fa-sort-down"></i></span>
+                        </a>
+                        <div class="collapse" id="sample-pages">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("disease/")}}>
+                                        diseases
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("disease/new")}}>
+                                        new disease
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("disease/1/edit")}}>
+                                        edit disease
+                                    </a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("disease/1")}}>
+                                        disease informations
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#aaa" aria-expanded="false" aria-controls="sample-pages">
+                            <img src={{asset ("backoffice/images/icons/mm.jpg")}} alt="">
+                            <span class="menu-title">Medicaments<i class="fa fa-sort-down"></i></span>
+                        </a>
+                        <div class="collapse" id="aaa">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("medication/")}}>
+                                       Medications
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("medication/new")}}>
+                                        new medicament
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("medication/1/edit")}}>
+                                        edit medicament
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href={{asset ("medication/1")}}>
+                                        medicament informations
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+            <div class="content-wrapper">
+
+
+
+                <div css="text-align:center" class="row">
+                    {% block body %}
+
+                    {% endblock%}
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid clearfix">
+            <span class="float-right">
+                <a href="">tunihealth</a>  2021
+            </span>
+                </div>
+            </footer>
+
+
+        </div>
+    </div>
+
+</div>
+
+<script src={{asset ("backoffice/node_modules/jquery/dist/jquery.min.js")}}></script>
+<script src={{asset ("backoffice/node_modules/popper.js/dist/umd/popper.min.js")}}></script>
+<script src={{asset ("backoffice/node_modules/bootstrap/dist/js/bootstrap.min.js")}}></script>
+<script src={{asset ("backoffice/node_modules/chart.js/dist/Chart.min.js")}}></script>
+<script src={{asset ("backoffice/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js")}}></script>
+<script src={{asset ("https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NXz9eVnyJOA81wimI8WYE08kW_JMe8g&callback=initMap")}} async defer></script>
+<script src={{asset("backoffice/js/off-canvas.js")}}></script>
+<script src={{asset ("backoffice/js/hoverable-collapse.js")}}></script>
+<script src={{asset ("backoffice/js/misc.js")}}></script>
+<script src={{asset ("backoffice/js/chart.js")}}></script>
+<script src={{asset ("backoffice/js/maps.js")}}></script>
+
+
+</body>
+
+</html>

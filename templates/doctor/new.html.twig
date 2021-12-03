@@ -1,0 +1,14 @@
+{% extends 'home/contact.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+
+{% block body %}
+
+
+    {{ include('doctor/_formnew.html.twig') }}
+
+    <button type="submit" class="btn btn-primary" href="{{ path('doctor_index') }}"></button>
+
+
+
+{% endblock %}

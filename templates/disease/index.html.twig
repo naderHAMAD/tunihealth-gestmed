@@ -1,0 +1,39 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Disease index{% endblock %}
+
+{% block body %}
+    <h1>Disease index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Diseasename</th>
+                <th>Medicamentname</th>
+                <th>Cinpatient</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for disease in diseases %}
+            <tr>
+                <td>{{ disease.id }}</td>
+                <td>{{ disease.diseasename }}</td>
+                <td>{{ disease.medicamentname }}</td>
+                <td>{{ disease.cinpatient }}</td>
+                <td>
+                    <button type="submit" class="btn btn-primary" href="{{ path('disease_show', {'id': disease.id}) }}">show</button>
+                    <button type="submit" class="btn btn-primary" href="{{ path('disease_edit', {'id': disease.id}) }}">edit</button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary" href="{{ path('disease_new') }}">Create new</button>
+{% endblock %}

@@ -1,0 +1,48 @@
+
+{% extends 'base-back.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+    <h1>Create new Ordonnance</h1>
+
+    {{ include('ordonnance/_form.html.twig') }}
+    {{ form_start(form) }}
+    {{ form_row(form.captchaCode) }}
+    {{ form_end(form) }}
+
+
+    <a href="{{ path('ordonnance_index') }}">back to list</a>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('ckeditor5/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/images.js') }}"></script>
+    <script>
+        window.onload = () => {
+            // On va chercher la région
+            let region = document.querySelector("#ordonannce_diseases");
+            region.addEventListener("change", function(){
+                let form = this.closest("form");
+                let data = this.name + "=" + this.value;
+
+                fetch(form.action, {
+                    method: form.getAttribute("method"),
+                    body: data,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded; charset:UTF-8"
+                    }
+                })
+                    .then(response => response.text())
+                    .then(html => {
+                        let content = document.createElement("html");
+                        content.innerHTML = html;
+                        let nouveauSelect = content.querySelector("#ordonnance_medications");
+                        document.querySelector("#ordonnance_medications").replaceWith(nouveauSelect);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            });
+        }
+    </script>
+{% endblock %}

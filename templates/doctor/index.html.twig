@@ -1,0 +1,59 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Doctor index{% endblock %}
+
+{% block body %}
+    <h1>Doctor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fullname</th>
+                <th>Cin</th>
+                <th>Birthdate</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Tel</th>
+                <th>Workadress</th>
+                <th>Speciality</th>
+                <th>Expyears</th>
+                <th>Cabinname</th>
+                <th>Certificate</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor.id }}</td>
+                <td>{{ doctor.fullname }}</td>
+                <td>{{ doctor.cin }}</td>
+                <td>{{ doctor.birthdate }}</td>
+                <td>{{ doctor.gender }}</td>
+                <td>{{ doctor.email }}</td>
+                <td>{{ doctor.tel }}</td>
+                <td>{{ doctor.workadress }}</td>
+                <td>{{ doctor.speciality }}</td>
+                <td>{{ doctor.expyears }}</td>
+                <td>{{ doctor.cabinname }}</td>
+                <td>{{ doctor.certificate }}</td>
+                <td>{{ doctor.username }}</td>
+                <td>{{ doctor.password }}</td>
+                <td>
+                    <a href="{{ path('doctor_show', {'id': doctor.id}) }}">show</a>
+                    <a href="{{ path('doctor_edit', {'id': doctor.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary" href="{{ path('doctor_new') }}">Create new</button>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Doctor{% endblock %}
+
+{% block body %}
+    <h1>Doctor</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ doctor.id }}</td>
+            </tr>
+            <tr>
+                <th>Fullname</th>
+                <td>{{ doctor.fullname }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ doctor.cin }}</td>
+            </tr>
+            <tr>
+                <th>Birthdate</th>
+                <td>{{ doctor.birthdate }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ doctor.gender }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ doctor.email }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ doctor.tel }}</td>
+            </tr>
+            <tr>
+                <th>Workadress</th>
+                <td>{{ doctor.workadress }}</td>
+            </tr>
+            <tr>
+                <th>Speciality</th>
+                <td>{{ doctor.speciality }}</td>
+            </tr>
+            <tr>
+                <th>Expyears</th>
+                <td>{{ doctor.expyears }}</td>
+            </tr>
+            <tr>
+                <th>Cabinname</th>
+                <td>{{ doctor.cabinname }}</td>
+            </tr>
+            <tr>
+                <th>Certificate</th>
+                <td>{{ doctor.certificate }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ doctor.username }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ doctor.password }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary" href="{{ path('doctor_index') }}">back to list</button>
+
+    <button type="submit" class="btn btn-primary" href="{{ path('doctor_edit', {'id': doctor.id}) }}">edit</button>
+
+    {{ include('doctor/_delete_form.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Disease{% endblock %}
+
+{% block body %}
+    <h1>Disease</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ disease.id }}</td>
+            </tr>
+            <tr>
+                <th>Diseasename</th>
+                <td>{{ disease.diseasename }}</td>
+            </tr>
+            <tr>
+                <th>Medicamentname</th>
+                <td>{{ disease.medicamentname }}</td>
+            </tr>
+            <tr>
+                <th>Cinpatient</th>
+                <td>{{ disease.cinpatient }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-primary" href="{{ path('disease_index') }}">back to list</button>
+
+    <button type="submit" class="btn btn-primary" href="{{ path('disease_edit', {'id': disease.id}) }}">edit</button>
+
+    {{ include('disease/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,13 @@
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}{% endblock %}
+
+{% block body %}
+
+
+    {{ include('doctor/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <button type="submit" class="btn btn-primary" href="{{ path('doctor_index') }}">back to list</button>
+
+
+{% endblock %}
